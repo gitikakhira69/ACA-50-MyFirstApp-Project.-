@@ -9,7 +9,8 @@ export default function LoginButton({
     onPress
 }){
   return(
-    <LinearGradient
+    <View>
+      <LinearGradient
         colors={['#4100ca','transparent','#c800c8']}
         style={styles.background}>
             <TouchableOpacity
@@ -19,6 +20,8 @@ export default function LoginButton({
                 <Text style={styles.buttonText}>{text}</Text>
             </TouchableOpacity>
         </LinearGradient>
+    </View>
+    
   );
   
 }
@@ -35,8 +38,7 @@ export default function LoginButton({
     borderRadius:10,
 },
   buttonText:{
-    alignItems:'center',
-    paddingLeft:33,
+    textAlign:"center",
     padding:10,
     fontWeight:'bold',
     fontSize:13,
@@ -44,8 +46,7 @@ export default function LoginButton({
 },
   button:{
     backgroundColor:"#6f79a8",
-    marginLeft:150,
-    marginRight:150,
-    marginTop:360,
+    marginTop:400,
+    marginHorizontal:100,
 },
 })

@@ -16,10 +16,10 @@ export default function Divider(){
 
 const styles = StyleSheet.create({
     container:{
-        alignContent:"center",
+        alignItems:"center",
         flexDirection:"row",
         justifyContent:'space-evenly',
-        paddingVertical:30,
+        paddingVertical:15,
     },
     line:{
         height:1,
@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
     },
     text:{
         fontWeight:"bold",
-        textAlign:"center",
-        lineHeight:0,
-        color:"#000070",
+        lineHeight:20,
         fontSize:15,
+        color:"#000070",
+        
     },
 });

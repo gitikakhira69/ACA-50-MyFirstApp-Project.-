@@ -13,41 +13,41 @@ export default function Login() {
     function handelLoginBtnClick(){
       console.log("Login click",email,password);
     }
-    return (
-      <ScrollView>
-
-        <LinearGradient
+  return (
+    <View>
+      <LinearGradient
         colors={['#4100ca','transparent','#c800c8']}
-        style={styles.background}> 
-          
+        style={styles.background}
+       >
+        <ScrollView>
+   
           <View style={{marginVertical:25}}></View>
 
-          
           <Text style={styles.title}>LOGIN</Text>
-         
+
           <View>
-              <Text style={styles.text}>EMAIL ADDRESS :</Text>
+            <Text style={styles.text}>EMAIL ADDRESS :</Text>
 
-              <View style={{padding:5}}></View>
+            <View style={{padding:5}}></View>
 
-              <TextInput 
-              style={styles.textInput}
-              keyboardType='email-address'
-              placeholder="ENTER YOUR REGISTERED EMAIL"
-              value={email}
-              onChangeText={(val)=>setEmail(val)}
-              ></TextInput>
+            <TextInput 
+            style={styles.textInput}
+            keyboardType='email-address'
+            placeholder="ENTER YOUR REGISTERED EMAIL"
+            value={email}
+            onChangeText={(val)=>setEmail(val)}
+            ></TextInput>
           </View>
 
           <View style={{marginVertical:25}}></View>
 
-          
+
           <View>
-              <Text style={styles.text}>PASSWORD :</Text>
+            <Text style={styles.text}>PASSWORD :</Text>
 
-              <View style={{padding:5}}></View>
+            <View style={{padding:5}}></View>
 
-              <TextInput
+            <TextInput
               style={styles.textInput}
               placeholder="ENTER YOUR PASSWORD"
               secureTextEntry
@@ -55,21 +55,21 @@ export default function Login() {
               onChangeText={(val)=>setPassword(val)}
               ></TextInput>
           </View>
-
-          
-         
+  
           <LoginButton
-          text="Log In"
-          onPress={handelLoginBtnClick}
+            text="LogIn"
+            onPress={handelLoginBtnClick}
           />
 
           <View style={{marginVertical:35}}></View>     
-          
-          
-          <Divider></Divider>     
-            
-        </LinearGradient>
-      </ScrollView>
+
+                <Divider></Divider>  
+
+        </ScrollView>
+      </LinearGradient>
+    </View>
+      
+      
     );
 }
 
@@ -81,8 +81,10 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height: 600,
+    marginVertical:60,
+    paddingHorizontal:10,
     borderRadius:10,
+    height:640,
   },
  title:{
   textAlign:'center',
@@ -90,8 +92,9 @@ const styles = StyleSheet.create({
   fontSize:48,
   fontWeight:'bold',
   color:"#000070",
-  textShadowColor:"#ea70ff",
-  textShadowOffset:{width:2,height:5}
+  textShadowOffset:{width:3,height:5},
+  textShadowColor:"#f8bbd0", 
+  textShadowRadius:6,
 },
  text:{ 
   color:"#291200",
@@ -123,8 +126,5 @@ button:{
   marginLeft:150,
   marginRight:150,
 },
- or:{
-   paddingLeft:185,
-   fontWeight:'bold',
- }
+
 });
