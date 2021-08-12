@@ -2,8 +2,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react'; 
 import { StyleSheet, Text, View, ScrollView,TextInput,TouchableOpacity} from 'react-native';
-import LoginButton from './LoginButton';
 import Divider from './divider';
+import BasicButton from './BasicButton';
+import LoginSignUpButton from './LoginSignUpbutton';
 
 export default function Login() {
     const [email,setEmail] = useState("");
@@ -12,6 +13,9 @@ export default function Login() {
     //functon to handel when login btn is clicked on
     function handelLoginBtnClick(){
       console.log("Login click",email,password);
+    }
+    function handelSignUpBtnClick(){
+      console.log("Signup Clicked")
     }
   return (
     <View>
@@ -56,7 +60,7 @@ export default function Login() {
               ></TextInput>
           </View>
   
-          <LoginButton
+          <BasicButton
             text="LogIn"
             onPress={handelLoginBtnClick}
           />
@@ -64,6 +68,13 @@ export default function Login() {
           <View style={{marginVertical:35}}></View>     
 
                 <Divider></Divider>  
+
+          <LoginSignUpButton
+          customStyle={styles.signup}
+          text="Don't Have An Account? "
+          btnText="Sign Up"
+          onPress={handelSignUpBtnClick}
+          ></LoginSignUpButton>
 
         </ScrollView>
       </LinearGradient>
@@ -77,15 +88,15 @@ export default function Login() {
 const styles = StyleSheet.create({
     
   background: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    marginVertical:60,
-    paddingHorizontal:10,
-    borderRadius:10,
-    height:640,
-  },
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  marginVertical:60,
+  paddingHorizontal:10,
+  borderRadius:10,
+  height:640,
+},
  title:{
   textAlign:'center',
   marginVertical:20,
@@ -106,25 +117,27 @@ const styles = StyleSheet.create({
 },
  
  textInput:{
-     borderBottomColor:"#4dd0e1",
-     borderBottomWidth:5,
-     borderRadius:10,
-     borderTopColor:"#4dd0e1",
-     borderTopWidth:5,
-     borderRightColor:"#002f6c",
-     borderRightWidth:5,
-     borderLeftColor:"#002f6c",
-     borderLeftWidth:5,
- },
+  borderBottomColor:"#4dd0e1",
+  borderBottomWidth:5,
+  borderRadius:10,
+  borderTopColor:"#4dd0e1",
+  borderTopWidth:5,
+  borderRightColor:"#002f6c",
+  borderRightWidth:5,
+  borderLeftColor:"#002f6c",
+  borderLeftWidth:5,
+},
  buttonText:{
   alignItems:'center',
   paddingLeft:33,
   padding:10,
 },
-button:{
+ button:{
   backgroundColor:"#6f79a8",
   marginLeft:150,
   marginRight:150,
 },
-
+ signup:{
+   marginTop : 40,
+ },
 });

@@ -3,23 +3,21 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react'; 
 import { StyleSheet, Text, View, ScrollView,TextInput,TouchableOpacity} from 'react-native';
 
-export default function LoginButton({
+export default function BaiscButton({
   //Login Button
     text,
     onPress
 }){
   return(
     <View>
-      <LinearGradient
-        colors={['#4100ca','transparent','#c800c8']}
-        style={styles.background}>
+      
             <TouchableOpacity
             style={styles.button}
             onPress={onPress}
             >
                 <Text style={styles.buttonText}>{text}</Text>
             </TouchableOpacity>
-        </LinearGradient>
+        
     </View>
     
   );
@@ -29,14 +27,7 @@ export default function LoginButton({
 
 
  const styles = StyleSheet.create({  
-  background: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    height: 600,
-    borderRadius:10,
-},
+ 
   buttonText:{
     textAlign:"center",
     padding:10,
@@ -46,7 +37,7 @@ export default function LoginButton({
 },
   button:{
     backgroundColor:"#6f79a8",
-    marginTop:400,
+    textAlign:"center",
     marginHorizontal:100,
 },
 })
